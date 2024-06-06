@@ -7,37 +7,80 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="STEMProlinks - A Professional Network for STEM Enthusiasts"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <title>STEMProlinks</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header, footer {
+        background-color: #282c34;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+      }
+      header {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+      .container {
+        margin: 0 auto;
+        padding: 2rem;
+        max-width: 1200px;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      .nav a:hover {
+        background-color: #444;
+      }
+      main {
+        min-height: calc(100vh - 160px); /* Adjust based on header and footer height */
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <header>
+      <div class="logo">STEMProlinks</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/network">Network</a>
+        <a href="/events">Events</a>
+        <a href="/mentorship">Mentorship</a>
+        <a href="/blogs">Blogs</a>
+      </nav>
+    </header>
+    <main class="container">
+      <div id="root"></div>
+    </main>
+    <footer>
+      <div>© 2024 STEMProlinks. All rights reserved.</div>
+    </footer>
+    <script src="%PUBLIC_URL%/main.js"></script>
   </body>
 </html>
