@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HamburgerMenu from './components/HamburgerMenu';
 import Intro from './components/Intro';
 import Features from './components/Features';
 import About from './components/About';
@@ -14,6 +13,8 @@ import Mentorship from './components/Mentorship';
 import Blogs from './components/Blogs';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Calculator from './components/Calculator';
+import Design from './components/Design';
 
 function App() {
   return (
@@ -23,7 +24,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Intro />} />
-	    <Route path="hamburgermenu" element={<HamburgerMenu />} />
             <Route path="/features" element={<Features />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
@@ -34,6 +34,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/calculator" element={<Calculator />} />
+            <Route path="/design" element={<Design />} />
           </Routes>
         </main>
         <Footer />

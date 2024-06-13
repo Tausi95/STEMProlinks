@@ -1,13 +1,12 @@
 import React from 'react';
 
-function Profile()
-{
-	return (
-		<div>
-			<h1>Your Profile</h1>
-			<p>Manage your profile information.</p>
-		</div>
-		);
+function Profile() {
+  return (
+    <div>
+      <h1>Profile</h1>
+      <p>Manage your profile information and settings.</p>
+    </div>
+  );
 }
 
 export default Profile;

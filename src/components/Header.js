@@ -1,14 +1,12 @@
 // src/components/Header.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HamburgerMenu from './HamburgerMenu';
 import './Header.css';
 
 const Header = () => {
   return (
     <header className="header">
       <h1>STEMProlinks</h1>
-      <HamburgerMenu />
       <nav className="desktop-menu">
         <ul>
           <li><Link to="/">Home</Link></li>
