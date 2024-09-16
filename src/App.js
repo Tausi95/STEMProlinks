@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Intro from './components/Intro';
-import Features from './components/Features';
 import About from './components/About';
 import Home from './components/Home';
 import Profile from './components/Profile';
@@ -24,7 +23,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Intro />} />
-            <Route path="/features" element={<Features />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/network" element={<Network />} />

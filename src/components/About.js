@@ -1,21 +1,18 @@
 // src/components/About.js
 import React from 'react';
 import './About.css';
+// Import social media icons
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const teamMembers = [
   {
-    name: 'Member 1',
-    linkedin: 'https://linkedin.com/in/member1',
-    github: 'https://github.com/member1',
-    twitter: 'https://twitter.com/member1'
-  },
-  {
-    name: 'Member 2',
-    linkedin: 'https://linkedin.com/in/member2',
-    github: 'https://github.com/member2',
-    twitter: 'https://twitter.com/member2'
+    name: 'Chancy Tsonga', // Updated with your name
+    linkedin: 'https://linkedin.com/in/TausiTsonga',
+    github: 'https://github.com/Tausi95',
+    twitter: 'https://twitter.com/ChancyTausi',
+    role: 'Developer & Founder',
+    photo: 'path/to/your/photo.jpg' // Optional: Add a path to your photo
   }
-  // Add more members as needed
 ];
 
 const About = () => {
@@ -23,23 +20,41 @@ const About = () => {
     <section className="about">
       <h2>About STEMProlinks</h2>
       <p>
-        STEMProlinks was inspired by the need to connect STEM professionals and
-        provide opportunities for mentorship, networking, and career development.
-        This project is a portfolio project for Holberton School, showcasing our skills
-        and dedication to building impactful solutions.
+        STEMProlinks is a platform dedicated to connecting STEM professionals
+        with mentorship and career development opportunities. This project is part of
+        Holberton School's curriculum, showcasing real-world skills and a passion for building 
+        innovative solutions.
       </p>
-      <h3>Team Members</h3>
-      <ul>
+
+      <h3>Our Mission</h3>
+      <p>
+        Our goal is to create a space where STEM enthusiasts and professionals can collaborate, 
+        learn, and grow together. Whether you're a student looking for guidance or an expert 
+        willing to mentor, STEMProlinks bridges the gap between talent and opportunity.
+      </p>
+
+      <h3>Team Member</h3>
+      <ul className="team-list">
         {teamMembers.map((member, index) => (
-          <li key={index}>
-            <p>{member.name}</p>
-            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href={member.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href={member.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+          <li key={index} className="team-member">
+            <img src={member.photo} alt={member.name} className="team-photo" /> {/* Optional */}
+            <div>
+              <p className="team-name">{member.name} - {member.role}</p>
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                <FaLinkedin /> LinkedIn
+              </a>
+              <a href={member.github} target="_blank" rel="noopener noreferrer">
+                <FaGithub /> GitHub
+              </a>
+              <a href={member.twitter} target="_blank" rel="noopener noreferrer">
+                <FaTwitter /> Twitter
+              </a>
+            </div>
           </li>
         ))}
       </ul>
-      <a href="https://github.com/Tausi95/STEMProlinks" target="_blank" rel="noopener noreferrer">
+
+      <a href="https://github.com/Tausi95/STEMProlinks" target="_blank" rel="noopener noreferrer" className="github-link">
         View the project on GitHub
       </a>
     </section>
@@ -47,3 +62,4 @@ const About = () => {
 };
 
 export default About;
+

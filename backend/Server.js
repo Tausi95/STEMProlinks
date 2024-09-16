@@ -14,6 +14,7 @@ app.use(express.json());
 
 // Define routes
 app.use('/api/users', userRoutes);
+app.use('/api/profile', profileRoutes);
 
 // Error handling middleware
 app.use(notFound);
