@@ -1,18 +1,30 @@
-// userModel.js
-const mongoose = require('mongoose'); // Import Mongoose
+// models/User.js
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db'); // Import sequelize instance
 
-// Define user schema
-const userSchema = mongoose.Schema(
-  {
-    name: { type: String, required: true }, // User name (required)
-    email: { type: String, required: true, unique: true }, // User email (required, unique)
-    password: { type: String, required: true }, // User password (required)
+const User = sequelize.define('User', {
+  // Define columns in the table
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
   },
-  {
-    timestamps: true, // Add createdAt and updatedAt timestamps
-  }
-);
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  role: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: 'student',
+  },
+});
 
-// Create user model
-const User = mongoose.model('User', userSchema);
-module.exports = User; // Export the user model
+// Export the model
+module.exports = User;
+

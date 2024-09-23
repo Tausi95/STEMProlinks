@@ -1,13 +1,32 @@
 const express = require('express');
-const { getMentors, applyForMentorship } = require('../controllers/mentorshipController');
-
 const router = express.Router();
+const { Mentor } = require('../models');
 
-// Route to get all mentors
-router.get('/', getMentors);
+// Get all mentors
+router.get('/', async (req, res) => {
+  try {
+    const mentors = await Mentor.findAll();
+    if (mentors.length === 0) {
+      return res.status(404).json({ message: "No mentors found." });
+    }
+    res.status(200).json(mentors);
+  } catch (error) {
+    res.status(500).json({ error: "An error occurred while fetching mentors: " + error.message });
+  }
+});
 
-// Route to apply for mentorship
-router.post('/apply', applyForMentorship);
+// Get mentors by field
+router.get('/:field', async (req, res) => {
+  try {
+    const mentors = await Mentor.findAll({ where: { field: req.params.field } });
+    if (mentors.length === 0) {
+      return res.status(404).json({ message: `No mentors found in the field: ${req.params.field}.` });
+    }
+    res.status(200).json(mentors);
+  } catch (error) {
+    res.status(500).json({ error: "An error occurred while fetching mentors: " + error.message });
+  }
+});
 
 module.exports = router;
 
