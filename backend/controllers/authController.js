@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt'); // For hashing passwords
 const jwt = require('jsonwebtoken'); // For generating tokens
-const User = require('../models/User'); // Sequelize model
+const User = require('../models/userModel'); // Sequelize model
 
 const registerUser = async (req, res) => {
   try {

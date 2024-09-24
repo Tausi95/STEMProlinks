@@ -1,30 +1,38 @@
-// models/User.js
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db'); // Import sequelize instance
+'use strict';
+const { Model } = require('sequelize');
 
-const User = sequelize.define('User', {
-  // Define columns in the table
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  role: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    defaultValue: 'student',
-  },
-});
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    static associate(models) {
+      // Define associations here if needed
+    }
+  }
 
-// Export the model
-module.exports = User;
+  User.init({
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'student',
+    },
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+
+  return User;
+};
 

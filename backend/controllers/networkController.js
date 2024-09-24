@@ -1,4 +1,4 @@
-const Connection = require('../models/Connection'); // Sequelize model
+const Connection = require('../models/network');
 
 const getConnections = async (req, res) => {
   try {

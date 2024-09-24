@@ -1,4 +1,4 @@
-const Event = require('../models/Event'); // Sequelize model
+const Event = require('../models/event');
 
 const getEvents = async (req, res) => {
   try {

@@ -1,7 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Profile = sequelize.define('Profile', {
-    // Profile attributes
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -10,10 +9,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    // Additional fields
     fieldOfInterest: {
       type: DataTypes.STRING,
-      allowNull: false, // e.g., 'Math', 'Physics', 'Engineering', etc.
+      allowNull: false,
     },
     role: {
       type: DataTypes.ENUM('student', 'mentor', 'event_creator'),
@@ -25,16 +23,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
 
-  // Relationships
   Profile.associate = function(models) {
-    // A Profile belongs to a single User
     Profile.belongsTo(models.User, {
       foreignKey: 'userId',
       as: 'user',
       onDelete: 'CASCADE',
     });
 
-    // A Profile can be part of many networks
     Profile.belongsToMany(models.Profile, {
       through: 'Network',
       as: 'connections',

@@ -11,9 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
 
-  // Relationships
   Network.associate = function(models) {
-    // Network is the linking table between Profile and Profile
     Network.belongsTo(models.Profile, {
       foreignKey: 'profileId',
       as: 'profile',
